@@ -1,0 +1,914 @@
+{% extends "global/Page.html" %}
+
+{% load otree%}
+{% block title %}
+    我的购物车
+{% endblock %}
+
+{% block content %}
+<div class="alert alert-success" role="alert">
+    <center><div id="initial"></div></center>
+  </div>
+    <p> <text id="content2"></text> </p>
+    <p> <text id="content3"></text> </p>
+
+
+    <section class="border p-3">
+        <div class='panel panel-body'>
+            <table border=0 style="width:100%">
+                <tr>
+                    <td width=100 align=center></td>
+                    <td width=100 align=center><font color="#6C6C6C"><strong>商品信息</strong></font></td>
+                    <td width=100 align=center><font color="#6C6C6C"><strong>金额</strong></font></td>
+                </tr>
+                
+                <div class='listgroup'>
+                    <div class='listgroup-item'>
+                        <form>
+                        <tr>
+                            <td align=center><HR></td>
+                            <td align=left><HR></td>
+                            <td align=center><HR></td>
+                        </tr>
+                        <tr>
+                            <td align=center><img src="{% static nImg1 %}" width="100px"/></td>
+                            <td align=left><font color="#6C6C6C">{{nLab1}}</font><br><font size="2" color="#6C6C6C">{{ndet1}}</font><br><strong>¥50</strong></td>
+                            <td align=center>
+                                <div class='col-sm-6 col-sm-offset-6'>
+                                <div class="input-group input-group-sm mb-3">
+                                    <div class="input-group-prepend">
+                                        <button id="downbutton1" class="btn btn-outline-secondary" type="button">-</button>
+                                    </div>
+                                    <input  id="inputbox1" type="number"min="0"max="50" type="text" class="form-control" placeholder="" style="text-align:center;">
+                                    <div class="input-group-append">
+                                    <button id="upbutton1" class="btn btn-outline-secondary" type="button">+</button>
+                                    </div>
+                              </div>
+                            </div>
+                            <font size="2" color="#6C6C6C"><div id="error1"></div></font>
+                            <font color="#FF0200"><strong>¥<text id="history1" class="table"></text></strong></font></td>
+                        </tr>
+                        <tr>
+                            <td align=center><HR></td>
+                            <td align=left><HR></td>
+                            <td align=center><HR></td>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align=center><img src="{% static nImg2 %}" width="100px"/></td>
+                            <td align=left><font color="#6C6C6C">{{nLab2}}</font><br><font size="2" color="#6C6C6C">{{ndet2}}</font><br><strong>¥50</strong></td>
+                            <td align=center>
+                                <div class='col-sm-6 col-sm-offset-6'>
+                                <div class="input-group input-group-sm mb-3">
+                                <div class="input-group-prepend">
+                                    <button id="downbutton2" class="btn btn-outline-secondary" type="button">-</button>
+                                </div>
+                                <input  id="inputbox2" type="number"min="0"max="50" type="text" class="form-control" placeholder="" style="text-align:center;">
+                                <div class="input-group-append">
+                                <button id="upbutton2" class="btn btn-outline-secondary" type="button">+</button>
+                                </div>
+                            </div>
+                        </div>
+                            <font size="2" color="#6C6C6C"><div id="error2"></div></font>
+                            <font color="#FF0200"><strong>¥<text id="history2" class="table"></text></strong></font>
+                        </td>
+                        </tr>
+                        <tr>
+                            <td align=center><HR></td>
+                            <td align=left><HR></td>
+                            <td align=center><HR></td>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align=center><img src="{% static nImg3 %}" width="100px"/></td>
+                            <td align=left><font color="#6C6C6C">{{nLab3}}</font><br><font size="2" color="#6C6C6C">{{ndet3}}</font><br><strong>¥50</strong></td>
+                            <td align=center>
+                                <div class='col-sm-6 col-sm-offset-6'>
+                                <div class="input-group input-group-sm mb-3">
+                                <div class="input-group-prepend">
+                                    <button id="downbutton3" class="btn btn-outline-secondary" type="button">-</button>
+                                </div>
+                                <input  id="inputbox3" type="number"min="0"max="50" type="text" class="form-control" placeholder="" style="text-align:center;">
+                                <div class="input-group-append">
+                                <button id="upbutton3" class="btn btn-outline-secondary" type="button">+</button>
+                                </div>
+                            </div>
+                        </div>
+                            <font size="2" color="#6C6C6C"><div id="error3"></div></font>
+                            <font color="#FF0200"><strong>¥<text id="history3" class="table"></text></strong></font>
+                        </tr>
+                        <tr>
+                            <td align=center><HR></td>
+                            <td align=left><HR></td>
+                            <td align=center><HR></td>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align=center><img src="{% static cImg1 %}" width="100px"/></td>
+                            <td align=left><font color="#6C6C6C">{{cLab1}}</font><br><font size="2" color="#6C6C6C">{{cdet1}}</font><br><strong>¥400</strong></td>
+                            <td align=center>
+                                <div class='col-sm-6 col-sm-offset-6'>
+                                <div class="input-group input-group-sm mb-3">
+                                <div class="input-group-prepend">
+                                    <button id="downbutton4" class="btn btn-outline-secondary" type="button">-</button>
+                                </div>
+                                <input  id="inputbox4" type="number"min="0"max="50" type="text" class="form-control" placeholder="" style="text-align:center;">
+                                <div class="input-group-append">
+                                <button id="upbutton4" class="btn btn-outline-secondary" type="button">+</button>
+                                </div>
+                            </div>
+                        </div>
+                            <font size="2" color="#6C6C6C"><div id="error4"></div></font>
+                            <font color="#FF0200"><strong>¥<text id="history4" class="table"></text></strong></font>
+                        </tr>
+                        <tr>
+                            <td align=center><HR></td>
+                            <td align=left><HR></td>
+                            <td align=center><HR></td>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align=center><img src="{% static cImg2 %}" width="100px"/></td>
+                            <td align=left><font color="#6C6C6C">{{cLab2}}</font><br><font size="2" color="#6C6C6C">{{cdet2}}</font><br><strong>¥400</strong></td>
+                            <td align=center>
+                                <div class='col-sm-6 col-sm-offset-6'>
+                                <div class="input-group input-group-sm mb-3">
+                                <div class="input-group-prepend">
+                                    <button id="downbutton5" class="btn btn-outline-secondary" type="button">-</button>
+                                </div>
+                                <input  id="inputbox5" type="number"min="0"max="50" type="text" class="form-control" placeholder="" style="text-align:center;">
+                                <div class="input-group-append">
+                                <button id="upbutton5" class="btn btn-outline-secondary" type="button">+</button>
+                                </div>
+                            </div>
+                        </div>
+                            <font size="2" color="#6C6C6C"><div id="error5"></div></font>
+                            <font color="#FF0200"><strong>¥<text id="history5" class="table"></text></strong></font>
+                        </tr>
+                        <tr>
+                            <td align=center><HR></td>
+                            <td align=left><HR></td>
+                            <td align=center><HR></td>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align=center><img src="{% static cImg3 %}" width="100px"/></td>
+                            <td align=left><font color="#6C6C6C">{{cLab3}}</font><br><font size="2" color="#6C6C6C">{{cdet3}}</font><br><strong>¥400</strong></td>
+                            <td align=center>
+                                <div class='col-sm-6 col-sm-offset-6'>
+                                <div class="input-group input-group-sm mb-3">
+                                <div class="input-group-prepend">
+                                    <button id="downbutton6" class="btn btn-outline-secondary" type="button">-</button>
+                                </div>
+                                <input  id="inputbox6" type="number"min="0"max="50" type="text" class="form-control" placeholder="" style="text-align:center;">
+                                <div class="input-group-append">
+                                <button id="upbutton6" class="btn btn-outline-secondary" type="button">+</button>
+                                </div>
+                            </div>
+                        </div>
+                            <font size="2" color="#6C6C6C"><div id="error6"></div></font>
+                            <font color="#FF0200"><strong>¥<text id="history6" class="table"></text></strong></font>
+                        </tr>
+                        <tr>
+                            <td align=center><HR></td>
+                            <td align=left><HR></td>
+                            <td align=center><HR></td>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align=center><font color="#6C6C6C"><strong>结算：</strong></font></td>
+                            <td align=center></td>
+                            <td align=center><font color="#6C6C6C"><strong>总计：</strong></font><font color="#FF0200"><strong>¥<text id="summary"></text></strong></font><br>
+                            <font color="#6C6C6C"><strong>实付：</strong></font><font color="#FF0200"><strong>¥<text id="payment"></text></strong></font></td></td>
+                        </tr>
+                    </form>
+                    </div>
+                </div>
+                </table>
+    </section>
+    <br>
+    <div class="alert alert-warning alert-dismissable" id="errorindicator" role="alert">
+        <center><div id="error"></div></center>
+      </div>
+<br>
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">Next</button>
+  <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLongTitle">请确认您的消费</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            注意：确定后将无法更改
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">取消</button>
+          <button class="otree-btn-next btn btn-primary" id="comfirmbutton">确定</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <input type="hidden" name="na1" id="id_n1" value="">
+    <input type="hidden" name="na2" id="id_n2" value="">
+    <input type="hidden" name="na3" id="id_n3" value="">
+    <input type="hidden" name="ca1" id="id_n4" value="">
+    <input type="hidden" name="ca2" id="id_n5" value="">
+    <input type="hidden" name="ca3" id="id_n6" value="">
+    <input type="hidden" name="valida" id="id_valid" value="">
+    <script>
+        var treatment = parseInt('{{player.treatment}}');
+        let content = document.getElementById('content');
+        let initial = document.getElementById('initial');
+        if (treatment==1) {
+            initial.innerHTML = "您本月可支配收入余额：¥2000，以及25张满¥100减¥20消费券";
+            content3.innerHTML = "请在购物车中添加选择的商品数量，在下方将会显示您的具体消费金额";
+            content2.innerHTML = "现在您有25张满100元减20元消费券，假设您每月可支配收入为2000元，您会拿出多少钱来购买下列这些常用商品呢？（剩下的钱您可能会将其用于投资储蓄、吃喝玩乐等）";
+        } else if (treatment == 2) {
+            initial.innerHTML = "您本月可支配收入余额：¥2000，并享受20%消费退税优惠";
+            content3.innerHTML = "请在购物车中添加选择的商品数量，在下方将会显示您的具体消费金额";
+            content2.innerHTML = "现在您可以享受20%消费退税优惠，假设您每月可支配收入为2000元，您会拿出多少钱来购买下列这些常用商品呢？（剩下的钱您可能会将其用于投资储蓄、吃喝玩乐等）";
+        } else {
+            initial.innerHTML = "您本月可支配收入余额：¥2000，以及政府派发的¥500现金";
+            content3.innerHTML = "请在购物车中添加选择的商品数量，在下方将会显示您的具体消费金额";
+            content2.innerHTML = "现在您收到了政府派发的500元现金，假设您每月可支配收入为2000元，您会拿出多少钱来购买下列这些常用商品呢？（剩下的钱您可能会将其用于投资储蓄、吃喝玩乐等）";
+        }
+        let history1 = document.getElementById('history1');
+        let history2 = document.getElementById('history2');
+        let history3 = document.getElementById('history3');
+        let history4 = document.getElementById('history4');
+        let history5 = document.getElementById('history5');
+        let history6 = document.getElementById('history6');
+
+        let inputbox1 = document.getElementById('inputbox1');
+        let inputbox2 = document.getElementById('inputbox2');
+        let inputbox3 = document.getElementById('inputbox3');
+        let inputbox4 = document.getElementById('inputbox4');
+        let inputbox5 = document.getElementById('inputbox5');
+        let inputbox6 = document.getElementById('inputbox6');
+
+        var input1 = 0;
+        var input2 = 0;
+        var input3 = 0;
+        var input4 = 0;
+        var input5 = 0;
+        var input6 = 0;
+        const integerwarning = "商品必须为整数";
+        const initialwarning = "请注意消费总金额不能超出账户余额";
+        
+        let error1 = document.getElementById('error1');
+        let error2 = document.getElementById('error2');
+        let error3 = document.getElementById('error3');
+        let error4 = document.getElementById('error4');
+        let error5 = document.getElementById('error5');
+        let error6 = document.getElementById('error6');
+        
+        let upbutton1 = document.getElementById('upbutton1');
+        let upbutton2 = document.getElementById('upbutton2');
+        let upbutton3 = document.getElementById('upbutton3');
+        let upbutton4 = document.getElementById('upbutton4');
+        let upbutton5 = document.getElementById('upbutton5');
+        let upbutton6 = document.getElementById('upbutton6');
+
+        let downbutton1 = document.getElementById('downbutton1');
+        let downbutton2 = document.getElementById('downbutton2');
+        let downbutton3 = document.getElementById('downbutton3');
+        let downbutton4 = document.getElementById('downbutton4');
+        let downbutton5 = document.getElementById('downbutton5');
+        let downbutton6 = document.getElementById('downbutton6');
+
+        let summary = document.getElementById('summary');
+        let payment = document.getElementById('payment');
+        let error = document.getElementById('error');
+        var sum;
+        var pay = 0;
+        var maximum = (treatment==3)? 2500:2000;
+
+        let comfirmbutton = document.getElementById('comfirmbutton');
+
+        $('#inputbox1').val(0);
+        input1 = 0;
+        history1.innerHTML = 0;
+        $('#inputbox2').val(0);
+        input2 = 0;
+        history2.innerHTML = 0;
+        $('#inputbox3').val(0);
+        input3 = 0;
+        history3.innerHTML = 0;
+        $('#inputbox4').val(0);
+        input4 = 0;
+        history4.innerHTML = 0;
+        $('#inputbox5').val(0);
+        input5 = 0;
+        history5.innerHTML = 0;
+        $('#inputbox6').val(0);
+        input6 = 0;
+        history6.innerHTML = 0;
+        sum = 0;
+        if (treatment == 2) {
+            pay = sum*0.8;
+        } else if (treatment==1) {
+            pay  = sum - Math.min(Math.floor(sum/100)*20,500);
+        } else {
+            pay = sum;
+        }
+        summary.innerHTML = sum;
+        payment.innerHTML = pay;
+        error.innerHTML = initialwarning;
+    
+        inputbox1.onchange = function () {
+            error.innerHTML = (error.innerHTML == initialwarning)? "":error.innerHTML;
+            error2.innerHTML = (error2.innerHTML == integerwarning)? integerwarning:"";
+            error3.innerHTML = (error3.innerHTML == integerwarning)? integerwarning:"";
+            error4.innerHTML = (error4.innerHTML == integerwarning)? integerwarning:"";
+            error5.innerHTML = (error5.innerHTML == integerwarning)? integerwarning:"";
+            error6.innerHTML = (error6.innerHTML == integerwarning)? integerwarning:"";
+            if (isNaN(parseInt(inputbox1.value))||(parseInt(inputbox1.value)<0)) {
+                error1.innerHTML = integerwarning;
+                $('#errorindicator').hide();
+            } else {
+                sum = sum-50*input1+50*(parseInt(inputbox1.value)||0);
+                summary.innerHTML = sum;
+                if (treatment == 2) {
+                    pay = sum*0.8;
+                } else if (treatment==1) {
+                    pay  = sum - Math.min(Math.floor(sum/100)*20,500);
+                } else {
+                    pay = sum;
+                }
+                payment.innerHTML = pay;
+                input1 = parseInt(inputbox1.value)||0;
+                history1.innerHTML = 50*parseInt(inputbox1.value)||0;
+                if (pay>maximum) {
+                    $('#errorindicator').show();
+                    error1.innerHTML = "账户余额不足";
+                    error.innerHTML = "购物车合计：¥"+pay+"，超出账户余额：¥"+maximum;
+                } else {
+                    $('#errorindicator').hide();
+                    error.innerHTML = ""; 
+                    error1.innerHTML = "";
+                }
+            }
+        };
+
+        inputbox2.onchange = function () {
+            error.innerHTML = (error.innerHTML == initialwarning)? "":error.innerHTML;
+            error1.innerHTML = (error1.innerHTML == integerwarning)? integerwarning:"";
+            error3.innerHTML = (error3.innerHTML == integerwarning)? integerwarning:"";
+            error4.innerHTML = (error4.innerHTML == integerwarning)? integerwarning:"";
+            error5.innerHTML = (error5.innerHTML == integerwarning)? integerwarning:"";
+            error6.innerHTML = (error6.innerHTML == integerwarning)? integerwarning:"";
+            if (isNaN(parseInt(inputbox2.value))||(parseInt(inputbox2.value)<0)) {
+                error2.innerHTML = integerwarning;
+                $('#errorindicator').hide();
+            } else {
+                sum = sum -50*input2+50*(parseInt(inputbox2.value)||0);
+                summary.innerHTML = sum;
+                if (treatment == 2) {
+                    pay = sum*0.8;
+                } else if (treatment==1) {
+                    pay  = sum - Math.min(Math.floor(sum/100)*20,500);
+                } else {
+                    pay = sum;
+                }
+                payment.innerHTML = pay;
+                input2 = parseInt(inputbox2.value)||0;
+                history2.innerHTML = 50*parseInt(inputbox2.value)||0;
+                if (pay>maximum) {
+                    $('#errorindicator').show();
+                    error2.innerHTML = "账户余额不足";
+                    error.innerHTML = "购物车合计：¥"+pay+"，超出账户余额：¥"+maximum;
+                } else {
+                    $('#errorindicator').hide();
+                    error.innerHTML = ""; 
+                    error2.innerHTML = "";
+                }
+            }
+        };
+        inputbox3.onchange = function () {
+            error.innerHTML = (error.innerHTML == initialwarning)? "":error.innerHTML;
+            error1.innerHTML = (error1.innerHTML == integerwarning)? integerwarning:"";
+            error2.innerHTML = (error2.innerHTML == integerwarning)? integerwarning:"";
+            error4.innerHTML = (error4.innerHTML == integerwarning)? integerwarning:"";
+            error5.innerHTML = (error5.innerHTML == integerwarning)? integerwarning:"";
+            error6.innerHTML = (error6.innerHTML == integerwarning)? integerwarning:"";
+            if (isNaN(parseInt(inputbox3.value))||(parseInt(inputbox3.value)<0)) {
+                error3.innerHTML = integerwarning;
+                $('#errorindicator').hide();
+            } else {
+                sum = sum-50*input3+50*(parseInt(inputbox3.value)||0);
+                summary.innerHTML = sum;
+                if (treatment == 2) {
+                    pay = sum*0.8;
+                } else if (treatment==1) {
+                    pay  = sum - Math.min(Math.floor(sum/100)*20,500);
+                } else {
+                    pay = sum;
+                }
+                payment.innerHTML = pay;
+                input3 = parseInt(inputbox3.value)||0;
+                history3.innerHTML = 50*parseInt(inputbox3.value)||0;
+                if (pay>maximum) {
+                    $('#errorindicator').show();
+                    error3.innerHTML = "账户余额不足";
+                    error.innerHTML = "购物车合计：¥"+pay+"，超出账户余额：¥"+maximum;
+                } else {
+                    $('#errorindicator').hide();
+                    error3.innerHTML = "";
+                    error.innerHTML = ""; 
+                }
+            }
+        };
+        inputbox4.onchange = function () {
+            error.innerHTML = (error.innerHTML == initialwarning)? "":error.innerHTML;
+            error1.innerHTML = (error1.innerHTML == integerwarning)? integerwarning:"";
+            error2.innerHTML = (error2.innerHTML == integerwarning)? integerwarning:"";
+            error3.innerHTML = (error3.innerHTML == integerwarning)? integerwarning:"";
+            error5.innerHTML = (error5.innerHTML == integerwarning)? integerwarning:"";
+            error6.innerHTML = (error6.innerHTML == integerwarning)? integerwarning:"";
+            if (isNaN(parseInt(inputbox4.value))||(parseInt(inputbox4.value)<0)) {
+                error4.innerHTML = integerwarning;
+                $('#errorindicator').hide();
+            } else {
+                sum = sum-400*input4+400*(parseInt(inputbox4.value)||0);
+                summary.innerHTML = sum;
+                if (treatment == 2) {
+                    pay = sum*0.8;
+                } else if (treatment==1) {
+                    pay  = sum - Math.min(Math.floor(sum/100)*20,500);
+                } else {
+                    pay = sum;
+                }
+                payment.innerHTML = pay;
+                input4 = parseInt(inputbox4.value)||0;
+                history4.innerHTML = 400*parseInt(inputbox4.value)||0;
+                if (pay>maximum) {
+                    $('#errorindicator').show();
+                    error4.innerHTML = "账户余额不足";
+                    error.innerHTML = "购物车合计：¥"+pay+"，超出账户余额：¥"+maximum;
+                } else {
+                    $('#errorindicator').hide();
+                    error4.innerHTML = "";
+                    error.innerHTML = ""; 
+                }
+            }
+        };
+        inputbox5.onchange = function () {
+            error.innerHTML = (error.innerHTML == initialwarning)? "":error.innerHTML;
+            error1.innerHTML = (error1.innerHTML == integerwarning)? integerwarning:"";
+            error2.innerHTML = (error2.innerHTML == integerwarning)? integerwarning:"";
+            error3.innerHTML = (error3.innerHTML == integerwarning)? integerwarning:"";
+            error4.innerHTML = (error4.innerHTML == integerwarning)? integerwarning:"";
+            error6.innerHTML = (error6.innerHTML == integerwarning)? integerwarning:"";
+            if (isNaN(parseInt(inputbox5.value))||(parseInt(inputbox5.value)<0)) {
+                error5.innerHTML = integerwarning;
+                $('#errorindicator').hide();
+            } else {
+                sum = sum-400*input5+400*(parseInt(inputbox5.value)||0);
+                summary.innerHTML = sum;
+                if (treatment == 2) {
+                    pay = sum*0.8;
+                } else if (treatment==1) {
+                    pay  = sum - Math.min(Math.floor(sum/100)*20,500);
+                } else {
+                    pay = sum;
+                }
+                payment.innerHTML = pay;
+                input5 = parseInt(inputbox5.value)||0;
+                history5.innerHTML = 400*parseInt(inputbox5.value)||0;
+                if (pay>maximum) {
+                    $('#errorindicator').show();
+                    error5.innerHTML = "账户余额不足";
+                    error.innerHTML = "购物车合计：¥"+pay+"，超出账户余额：¥"+maximum;
+                } else {
+                    $('#errorindicator').hide();
+                    error5.innerHTML = "";
+                    error.innerHTML = ""; 
+                }
+            }
+        };
+        inputbox6.onchange = function () {
+            error.innerHTML = (error.innerHTML == initialwarning)? "":error.innerHTML;
+            error1.innerHTML = (error1.innerHTML == integerwarning)? integerwarning:"";
+            error2.innerHTML = (error2.innerHTML == integerwarning)? integerwarning:"";
+            error3.innerHTML = (error3.innerHTML == integerwarning)? integerwarning:"";
+            error4.innerHTML = (error4.innerHTML == integerwarning)? integerwarning:"";
+            error5.innerHTML = (error5.innerHTML == integerwarning)? integerwarning:"";
+            if (isNaN(parseInt(inputbox6.value))||(parseInt(inputbox6.value)<0)) {
+                error6.innerHTML = integerwarning;
+                $('#errorindicator').hide();
+            } else {
+                sum = sum-400*input6+400*(parseInt(inputbox6.value)||0);
+                summary.innerHTML = sum;
+                if (treatment == 2) {
+                    pay = sum*0.8;
+                } else if (treatment==1) {
+                    pay  = sum - Math.min(Math.floor(sum/100)*20,500);
+                } else {
+                    pay = sum;
+                }
+                payment.innerHTML = pay;
+                input6 = parseInt(inputbox6.value)||0;
+                history6.innerHTML = 400*parseInt(inputbox6.value)||0;
+                if (pay>maximum) {
+                    $('#errorindicator').show();
+                    error6.innerHTML = "账户余额不足";
+                    error.innerHTML = "购物车合计：¥"+pay+"，超出账户余额：¥"+maximum;
+                } else { 
+                    $('#errorindicator').hide();
+                    error6.innerHTML = "";
+                    error.innerHTML = ""; 
+                }
+            }
+        };
+
+        comfirmbutton.onclick = function () {
+            if (error.innerHTML==initialwarning) {
+                $('#id_valid').val(0);
+            } else if (error.innerHTML=="") {
+                $('#id_valid').val(0);
+            } else $('#id_valid').val(-2);
+            $('#id_n1').val((error1.innerHTML != integerwarning)? parseInt(inputbox1.value)||0 : -1);
+            $('#id_n2').val((error2.innerHTML != integerwarning)? parseInt(inputbox2.value)||0 : -1);
+            $('#id_n3').val((error3.innerHTML != integerwarning)? parseInt(inputbox3.value)||0 : -1);
+            $('#id_n4').val((error4.innerHTML != integerwarning)? parseInt(inputbox4.value)||0 : -1);
+            $('#id_n5').val((error5.innerHTML != integerwarning)? parseInt(inputbox5.value)||0 : -1);
+            $('#id_n6').val((error6.innerHTML != integerwarning)? parseInt(inputbox6.value)||0 : -1);
+        };
+
+        upbutton1.onclick = function () {
+            error.innerHTML = (error.innerHTML == initialwarning)? "":error.innerHTML;
+            error2.innerHTML = (error2.innerHTML == integerwarning)? integerwarning:"";
+            error3.innerHTML = (error3.innerHTML == integerwarning)? integerwarning:"";
+            error4.innerHTML = (error4.innerHTML == integerwarning)? integerwarning:"";
+            error5.innerHTML = (error5.innerHTML == integerwarning)? integerwarning:"";
+            error6.innerHTML = (error6.innerHTML == integerwarning)? integerwarning:"";
+            sum = sum+50;
+            if (treatment == 2) {
+                pay = sum*0.8;
+            } else if (treatment==1) {
+                pay = sum - Math.min(Math.floor(sum/100)*20,500);
+            } else {
+                pay = sum;
+            }
+            payment.innerHTML = pay;               
+            history1.innerHTML = 50 + parseInt(history1.innerHTML)||0
+            summary.innerHTML = 50 + parseInt(summary.innerHTML)||0
+            input1+=1;
+            $('#inputbox1').val(input1);
+            if (pay>maximum) {
+                $('#errorindicator').show();
+                error1.innerHTML = "账户余额不足";
+                error.innerHTML = "购物车合计：¥"+pay+"，超出账户余额：¥"+maximum;
+            } else {
+                $('#errorindicator').hide();
+                error1.innerHTML = "";
+            }
+        }
+        upbutton2.onclick = function () {
+            error.innerHTML = (error.innerHTML == initialwarning)? "":error.innerHTML;
+            error1.innerHTML = (error1.innerHTML == integerwarning)? integerwarning:"";
+            error3.innerHTML = (error3.innerHTML == integerwarning)? integerwarning:"";
+            error4.innerHTML = (error4.innerHTML == integerwarning)? integerwarning:"";
+            error5.innerHTML = (error5.innerHTML == integerwarning)? integerwarning:"";
+            error6.innerHTML = (error6.innerHTML == integerwarning)? integerwarning:"";
+            sum = sum+50;
+            if (treatment == 2) {
+                pay = sum*0.8;
+            } else if (treatment==1) {
+                pay = sum - Math.min(Math.floor(sum/100)*20,500);
+            } else {
+                pay = sum;
+            }
+            payment.innerHTML = pay;               
+            history2.innerHTML = 50 + parseInt(history2.innerHTML)||0
+            summary.innerHTML = 50 + parseInt(summary.innerHTML)||0
+            input2+=1;
+            $('#inputbox2').val(input2);
+            if (pay>maximum) {
+                $('#errorindicator').show();
+                error2.innerHTML = "账户余额不足";
+                error.innerHTML = "购物车合计：¥"+pay+"，超出账户余额：¥"+maximum;
+            } else {
+                $('#errorindicator').hide();
+                error2.innerHTML = "";
+            }
+        }
+        upbutton3.onclick = function () {
+            error.innerHTML = (error.innerHTML == initialwarning)? "":error.innerHTML;
+            error1.innerHTML = (error1.innerHTML == integerwarning)? integerwarning:"";
+            error2.innerHTML = (error2.innerHTML == integerwarning)? integerwarning:"";
+            error4.innerHTML = (error4.innerHTML == integerwarning)? integerwarning:"";
+            error5.innerHTML = (error5.innerHTML == integerwarning)? integerwarning:"";
+            error6.innerHTML = (error6.innerHTML == integerwarning)? integerwarning:"";
+            sum = sum+50;
+            if (treatment == 2) {
+                pay = sum*0.8;
+            } else if (treatment==1) {
+                pay = sum - Math.min(Math.floor(sum/100)*20,500);
+            } else {
+                pay = sum;
+            }
+            payment.innerHTML = pay;               
+            history3.innerHTML = 50 + parseInt(history3.innerHTML)||0
+            summary.innerHTML = 50 + parseInt(summary.innerHTML)||0
+            input3+=1;
+            $('#inputbox3').val(input3);
+            if (pay>maximum) {
+                $('#errorindicator').show();
+                error3.innerHTML = "账户余额不足";
+                error.innerHTML = "购物车合计：¥"+pay+"，超出账户余额：¥"+maximum;
+            } else {
+                $('#errorindicator').hide();
+                error3.innerHTML = "";
+            }
+        }
+        upbutton4.onclick = function () {
+            error.innerHTML = (error.innerHTML == initialwarning)? "":error.innerHTML;
+            error1.innerHTML = (error1.innerHTML == integerwarning)? integerwarning:"";
+            error2.innerHTML = (error2.innerHTML == integerwarning)? integerwarning:"";
+            error3.innerHTML = (error3.innerHTML == integerwarning)? integerwarning:"";
+            error5.innerHTML = (error5.innerHTML == integerwarning)? integerwarning:"";
+            error6.innerHTML = (error6.innerHTML == integerwarning)? integerwarning:"";        
+            sum = sum+400
+            if (treatment == 2) {
+                pay = sum*0.8;
+            } else if (treatment==1) {
+                pay = sum - Math.min(Math.floor(sum/100)*20,500);
+            } else {
+                pay = sum;
+            }
+            payment.innerHTML = pay;               
+            history4.innerHTML = 400 + parseInt(history4.innerHTML)||0
+            summary.innerHTML = 400 + parseInt(summary.innerHTML)||0
+            input4+=1;
+            $('#inputbox4').val(input4);
+            if (pay>maximum) {
+                $('#errorindicator').show();
+                error4.innerHTML = "账户余额不足";
+                error.innerHTML = "购物车合计：¥"+pay+"，超出账户余额：¥"+maximum;
+            } else {
+                $('#errorindicator').hide();
+                error4.innerHTML = "";
+            }
+        }
+        upbutton5.onclick = function () {
+            error.innerHTML = (error.innerHTML == initialwarning)? "":error.innerHTML;
+            error1.innerHTML = (error1.innerHTML == integerwarning)? integerwarning:"";
+            error2.innerHTML = (error2.innerHTML == integerwarning)? integerwarning:"";
+            error3.innerHTML = (error3.innerHTML == integerwarning)? integerwarning:"";
+            error4.innerHTML = (error4.innerHTML == integerwarning)? integerwarning:"";
+            error6.innerHTML = (error6.innerHTML == integerwarning)? integerwarning:"";
+            sum = sum+400
+            if (treatment == 2) {
+                pay = sum*0.8;
+            } else if (treatment==1) {
+                pay = sum - Math.min(Math.floor(sum/100)*20,500);
+            } else {
+                pay = sum;
+            }
+            payment.innerHTML = pay;               
+            history5.innerHTML = 400 + parseInt(history5.innerHTML)||0
+            summary.innerHTML = 400 + parseInt(summary.innerHTML)||0
+            input5+=1;
+            $('#inputbox5').val(input5);
+            if (pay>maximum) {
+                $('#errorindicator').show();
+                error5.innerHTML = "账户余额不足";
+                error.innerHTML = "购物车合计：¥"+pay+"，超出账户余额：¥"+maximum;
+            } else {
+                $('#errorindicator').hide();
+                error5.innerHTML = "";
+            }
+        }
+        upbutton6.onclick = function () {
+            error.innerHTML = (error.innerHTML == initialwarning)? "":error.innerHTML;
+            error1.innerHTML = (error1.innerHTML == integerwarning)? integerwarning:"";
+            error2.innerHTML = (error2.innerHTML == integerwarning)? integerwarning:"";
+            error3.innerHTML = (error3.innerHTML == integerwarning)? integerwarning:"";
+            error4.innerHTML = (error4.innerHTML == integerwarning)? integerwarning:"";
+            error5.innerHTML = (error5.innerHTML == integerwarning)? integerwarning:"";
+            sum = sum+400
+            if (treatment == 2) {
+                pay = sum*0.8;
+            } else if (treatment==1) {
+                pay = sum - Math.min(Math.floor(sum/100)*20,500);
+            } else {
+                pay = sum;
+            }
+            payment.innerHTML = pay;               
+            history6.innerHTML = 400 + parseInt(history6.innerHTML)||0
+            summary.innerHTML = 400 + parseInt(summary.innerHTML)||0
+            input6+=1;
+            $('#inputbox6').val(input6);
+            if (pay>maximum) {
+                $('#errorindicator').show();
+                error6.innerHTML = "账户余额不足";
+                error.innerHTML = "购物车合计：¥"+pay+"，超出账户余额：¥"+maximum;
+            } else {
+                $('#errorindicator').hide();
+                error6.innerHTML = "";
+            }
+        }
+
+        downbutton1.onclick = function () {
+            error.innerHTML = (error.innerHTML == initialwarning)? "":error.innerHTML;
+            error2.innerHTML = (error2.innerHTML == integerwarning)? integerwarning:"";
+            error3.innerHTML = (error3.innerHTML == integerwarning)? integerwarning:"";
+            error4.innerHTML = (error4.innerHTML == integerwarning)? integerwarning:"";
+            error5.innerHTML = (error5.innerHTML == integerwarning)? integerwarning:"";
+            error6.innerHTML = (error6.innerHTML == integerwarning)? integerwarning:"";
+            sum = Math.max(-50*(input1>0)+sum,0)
+            if (treatment == 2) {
+                pay = sum*0.8;
+            } else if (treatment==1) {
+                pay  = sum - Math.min(Math.floor(sum/100)*20,500);
+            } else {
+                pay = sum;
+            }
+            payment.innerHTML = pay
+            summary.innerHTML = sum
+            if (pay>maximum) {
+                $('#errorindicator').show();
+                error1.innerHTML = "账户余额不足";
+                error.innerHTML = "购物车合计：¥"+pay+"，超出账户余额：¥"+maximum;
+                $('#inputbox1').val(Math.max(-1+input1,0));
+            }
+            else {
+                //history1.innerHTML = Math.max(-50+parseInt(history1.innerHTML)||0,0);
+                $('#inputbox1').val(Math.max(-1+input1,0));
+                $('#errorindicator').hide();
+                error1.innerHTML = "";
+                error.innerHTML="";
+            }
+            history1.innerHTML = 50*$('#inputbox1').val();
+            input1 = parseInt(inputbox1.value)
+        }
+        downbutton2.onclick = function () {
+            error.innerHTML = (error.innerHTML == initialwarning)? "":error.innerHTML;
+            error1.innerHTML = (error1.innerHTML == integerwarning)? integerwarning:"";
+            error3.innerHTML = (error3.innerHTML == integerwarning)? integerwarning:"";
+            error4.innerHTML = (error4.innerHTML == integerwarning)? integerwarning:"";
+            error5.innerHTML = (error5.innerHTML == integerwarning)? integerwarning:"";
+            error6.innerHTML = (error6.innerHTML == integerwarning)? integerwarning:"";
+            sum = Math.max(-50*(input2>0)+sum,0)
+            if (treatment == 2) {
+                pay = sum*0.8;
+            } else if (treatment==1) {
+                pay  = sum - Math.min(Math.floor(sum/100)*20,500);
+            } else {
+                pay = sum;
+            }
+            payment.innerHTML = pay
+            summary.innerHTML = sum
+            if (pay>maximum) {
+                $('#errorindicator').show();
+                error2.innerHTML = "账户余额不足";
+                error.innerHTML = "购物车合计：¥"+pay+"，超出账户余额：¥"+maximum;
+                $('#inputbox2').val(Math.max(-1+input2||0,0));
+            }
+            else {
+                $('#inputbox2').val(Math.max(-1+input2||0,0));
+                $('#errorindicator').hide();
+                error2.innerHTML = "";
+                error.innerHTML="";
+            }
+            history2.innerHTML = 50*$('#inputbox2').val();
+            input2 = parseInt(inputbox2.value)
+        }
+
+        downbutton3.onclick = function () {
+            error.innerHTML = (error.innerHTML == initialwarning)? "":error.innerHTML;
+            error1.innerHTML = (error1.innerHTML == integerwarning)? integerwarning:"";
+            error2.innerHTML = (error2.innerHTML == integerwarning)? integerwarning:"";
+            error4.innerHTML = (error4.innerHTML == integerwarning)? integerwarning:"";
+            error5.innerHTML = (error5.innerHTML == integerwarning)? integerwarning:"";
+            error6.innerHTML = (error6.innerHTML == integerwarning)? integerwarning:"";
+            sum = Math.max(-50*(input3>0)+sum,0)
+            if (treatment == 2) {
+                pay = sum*0.8;
+            } else if (treatment==1) {
+                pay  = sum - Math.min(Math.floor(sum/100)*20,500);
+            } else {
+                pay = sum;
+            }
+            payment.innerHTML = pay
+            summary.innerHTML = sum
+            if (pay>maximum) {
+                $('#errorindicator').show();
+                error3.innerHTML = "账户余额不足";
+                error.innerHTML = "购物车合计：¥"+pay+"，超出账户余额：¥"+maximum;
+                $('#inputbox3').val(Math.max(-1+input3||0,0));
+            }
+            else {
+                $('#inputbox3').val(Math.max(-1+input3||0,0));
+                $('#errorindicator').hide();
+                error3.innerHTML = "";
+                error.innerHTML="";
+            }
+            history3.innerHTML = 50*$('#inputbox3').val();
+            input3 = parseInt(inputbox3.value);
+        }
+        downbutton4.onclick = function () {
+            error.innerHTML = (error.innerHTML == initialwarning)? "":error.innerHTML;
+            error1.innerHTML = (error1.innerHTML == integerwarning)? integerwarning:"";
+            error2.innerHTML = (error2.innerHTML == integerwarning)? integerwarning:"";
+            error3.innerHTML = (error3.innerHTML == integerwarning)? integerwarning:"";
+            error5.innerHTML = (error5.innerHTML == integerwarning)? integerwarning:"";
+            error6.innerHTML = (error6.innerHTML == integerwarning)? integerwarning:"";
+            sum = Math.max(-400*(input4>0)+sum,0)
+            if (treatment == 2) {
+                pay = sum*0.8;
+            } else if (treatment==1) {
+                pay  = sum - Math.min(Math.floor(sum/100)*20,500);
+            } else {
+                pay = sum;
+            }
+            payment.innerHTML = pay
+            summary.innerHTML = sum
+            if (pay>maximum) {
+                $('#errorindicator').show();
+                error4.innerHTML = "账户余额不足";
+                error.innerHTML = "购物车合计：¥"+pay+"，超出账户余额：¥"+maximum;
+                $('#inputbox4').val(Math.max(-1+input4||0,0));
+            }
+            else {
+                $('#inputbox4').val(Math.max(-1+input4||0,0));
+                $('#errorindicator').hide();
+                error4.innerHTML = "";
+                error.innerHTML="";
+            }
+            history4.innerHTML = 400*$('#inputbox4').val();
+            input4 = parseInt(inputbox4.value);
+        }
+        downbutton5.onclick = function () {
+            error.innerHTML = (error.innerHTML == initialwarning)? "":error.innerHTML;
+            error1.innerHTML = (error1.innerHTML == integerwarning)? integerwarning:"";
+            error2.innerHTML = (error2.innerHTML == integerwarning)? integerwarning:"";
+            error3.innerHTML = (error3.innerHTML == integerwarning)? integerwarning:"";
+            error4.innerHTML = (error4.innerHTML == integerwarning)? integerwarning:"";
+            error6.innerHTML = (error6.innerHTML == integerwarning)? integerwarning:"";
+            sum = Math.max(-400*(input5>0)+sum,0)
+            if (treatment == 2) {
+                pay = sum*0.8;
+            } else if (treatment==1) {
+                pay  = sum - Math.min(Math.floor(sum/100)*20,500);
+            } else {
+                pay = sum;
+            }
+            payment.innerHTML = pay
+            summary.innerHTML = sum
+            if (pay>maximum) {
+                $('#errorindicator').show();
+                error5.innerHTML = "账户余额不足";
+                error.innerHTML = "购物车合计：¥"+pay+"，超出账户余额：¥"+maximum;
+                $('#inputbox5').val(Math.max(-1+input5||0,0));
+            }
+            else {
+                $('#inputbox5').val(Math.max(-1+input5||0,0));
+                $('#errorindicator').hide();
+                error5.innerHTML = "";
+                error.innerHTML="";
+            }
+            history5.innerHTML = 400*$('#inputbox5').val();
+            input5 = parseInt(inputbox5.value);
+        }
+        downbutton6.onclick = function () {
+            error.innerHTML = (error.innerHTML == initialwarning)? "":error.innerHTML;
+            error1.innerHTML = (error1.innerHTML == integerwarning)? integerwarning:"";
+            error2.innerHTML = (error2.innerHTML == integerwarning)? integerwarning:"";
+            error3.innerHTML = (error3.innerHTML == integerwarning)? integerwarning:"";
+            error4.innerHTML = (error4.innerHTML == integerwarning)? integerwarning:"";
+            error5.innerHTML = (error5.innerHTML == integerwarning)? integerwarning:"";
+            sum = Math.max(-400*(input6>0)+sum,0)
+            if (treatment == 2) {
+                pay = sum*0.8;
+            } else if (treatment==1) {
+                pay  = sum - Math.min(Math.floor(sum/100)*20,500);
+            } else {
+                pay = sum;
+            }
+            payment.innerHTML = pay
+            summary.innerHTML = sum
+            if (pay>maximum) {
+                $('#errorindicator').show();
+                error6.innerHTML = "账户余额不足";
+                error.innerHTML = "购物车合计：¥"+pay+"，超出账户余额：¥"+maximum;
+                $('#inputbox6').val(Math.max(-1+input6||0,0));
+            }
+            else {
+                $('#inputbox6').val(Math.max(-1+input6||0,0));
+                $('#errorindicator').hide();
+                error6.innerHTML = "";
+                error.innerHTML="";
+            }
+            history6.innerHTML = 400*$('#inputbox6').val();
+            input6 = parseInt(inputbox6.value);
+        }
+    </script>
+    
+    
+{% endblock %}

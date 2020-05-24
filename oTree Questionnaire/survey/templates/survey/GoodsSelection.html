@@ -1,0 +1,41 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block title %}
+    问卷
+{% endblock %}
+
+{% block content %}
+
+    <p>
+        请根据您的真实消费习惯回答下列问题：
+    </p>
+    <hr>
+
+    <div class="necessity">
+        <p>
+            1. 请选择您最常购买的<font color="#076BFF"><strong>三件商品</strong></font>
+        </p>
+        <div class="list-group">
+        {% for choice in form.necessity %}
+        <label class="btn btn-outline-secondary list-group-item list-group-item-action"> {{ choice.tag }}<img src="{% static ''|add:choice.data.value|add:'' %}" height="40px"/>{{ choice.choice_label }}</label> 
+        {% endfor %}
+        </div>
+    </div>
+    <br>
+
+    <div class="comfort">
+        <p>
+            2. 请选择您最常购买的<font color="#076BFF"><strong>三件商品</strong></font>
+        </p>
+        <div class="list-group">
+        {% for choice in form.comfort %}
+        <label class="btn btn-outline-secondary list-group-item list-group-item-action"> {{ choice.tag }}<img src="{% static ''|add:choice.data.value|add:'' %}" height="40px"/>{{ choice.choice_label }}</label> 
+        {% endfor %}
+        </div>
+    </div>
+    <br>
+
+    {% next_button %}
+
+{% endblock %}

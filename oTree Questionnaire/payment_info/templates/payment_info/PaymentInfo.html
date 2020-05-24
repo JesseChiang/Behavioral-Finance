@@ -1,0 +1,31 @@
+{% extends "global/Page.html" %}
+{% load otree %}
+
+{% block title %}
+    Thank you
+{% endblock %}
+
+{% block content %}
+
+    <p>
+        感谢您填写此次问卷，我们将对问卷信息绝对保密；
+    </p>
+        <p>问卷所得资料，只会作学术研究用途，不会作任何其他用途。
+    </p>
+
+    <div class="panel panel-default" style="margin-bottom:10px">
+        <div class="panel-body">
+            <p><strong>Acknowledgement</strong></p>
+            <p>This is a questionnaire powered by oTree, an open-source platform for behavioral research.</p>
+            <p>For more detailed information, please click <a href="http://www.otree.org">Here</a></p>
+            </div>
+    </div>
+    <div class="panel panel-default" style="margin-bottom:10px">
+        <div class="panel-body">
+            <p><strong>Citation</strong></p>
+            <p>Chen, D.L., Schonger, M., Wickens, C., 2016. oTree - An open-source platform for laboratory, online and field experiments. Journal of Behavioral and Experimental Finance, vol 9: 88-97
+            </p>
+        </div>
+    </div>
+{% endblock %}
+

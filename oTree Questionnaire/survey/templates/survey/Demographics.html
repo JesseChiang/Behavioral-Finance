@@ -1,0 +1,46 @@
+{% extends "global/Page.html" %}
+{% load otree static%}
+
+{% block title %}
+    问卷
+{% endblock %}
+
+{% block content %}
+
+    <p>
+        请回答下列问题：
+    </p>
+    <hr>
+
+    {% formfields %}
+
+
+    <div class="accordion" id="accordionExample">
+      <div class="card">
+        <div class="card-header" id="headingTwo">
+            <text>Tips</text><button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+              看看我的家乡/常住地是什么城市
+            </button>
+        </div>
+        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+          <div class="card-body">
+              <p>
+                  2019年5月24日， 第一财经 新一线城市研究所举办“新一线城市峰会”，峰会的主题为“城市的一万种可能”，峰会上发布了《2019城市商业魅力排行榜》：
+              </p>
+              <p>
+                  一线：北京、上海、广州、深圳
+              </p>
+              <p>
+                  新一线：成都、杭州、重庆、武汉、西安、苏州、天津、南京、长沙、郑州、东莞、青岛、沈阳、宁波、昆明
+              </p>
+              <p>  
+                  新二线：无锡、佛山、合肥、大连、福州、厦门、哈尔滨、济南、温州、南宁、长春、泉州、石家庄、贵阳、常州、南通、嘉兴、太原、徐州、南昌、金华、惠州、珠海、中山、台州、烟台、兰州、绍兴、海口、扬州
+              <p>  
+        </div>
+        </div>
+      </div>
+    </div>
+    <br>
+    {% next_button %}
+
+{% endblock %}

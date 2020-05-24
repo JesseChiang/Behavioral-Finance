@@ -1,0 +1,56 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block title %}
+    问卷
+{% endblock %}
+
+{% block content %}
+<p>
+    请认真阅读以下内容：
+</p>
+<div class="alert alert-success" role="alert">
+<p> <text id="content1"></text>  </p>
+</div>
+<p> <text id="content2"></text> </p>
+<p> <text id="content3"></text> </p>
+
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">Next</button>
+  <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLongTitle">请确认您已了解该消费政策</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            我已认真阅读并了解了以上内容
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">取消</button>
+          <button class="otree-btn-next btn btn-primary">确认</button>
+        </div>
+      </div>
+    </div>
+  </div>
+    <script>
+        var treatment = '{{player.treatment}}';
+        let content = document.getElementById('content');
+        if (treatment==1) {
+            content1.innerHTML = "在疫情的影响下，政府出台了相应的消费政策。您将会获得25张满100元减20元的线上消费券。此消费券可适用于您所选择的几类商品，但是只有每满100元的商品消费，您才可以获得20元消费券优惠。例如，买满100元的商品，只需实际支付80元。";
+            content2.innerHTML = "假设您本月可支配收入为¥2000，您可能会将其用于日常消费、投资储蓄、吃喝玩乐等；";
+            content3.innerHTML = "现在您将拥有25张满100元减20元的消费券，请点击下方按钮进入下一页。";
+        } else if (treatment == 2) {
+            content1.innerHTML = "在疫情的影响下，政府出台了相应的消费政策。当您在购买商品时，将可以获得高达20%的商品退税。这意味着，假设您的消费金额是Y，您在支付Y后，将获得0.2*Y的返现。假如您愿意将返现直接使用在本次消费中，这将约等于您获得了八折的优惠。";
+            content2.innerHTML = "假设您本月可支配收入为¥2000，您可能会将其用于日常消费、投资储蓄、吃喝玩乐等；";
+            content3.innerHTML = "现在您将享受20%的消费退税优惠，请点击下方按钮进入下一页。";
+        } else {
+            content1.innerHTML = "在疫情的影响下，政府出台了相应的经济政策。政府将会给每位公民发放500元的现金以供消费。这意味着，您的可支配收入将从原来的2000元提高到2500元。";
+            content2.innerHTML = "假设您将本月可支配收入为¥2000，您可能会将其用于日常消费、投资储蓄、吃喝玩乐等；";
+            content3.innerHTML = "现在您将收到政府派发的¥500现金，请点击下方按钮进入下一页。";
+        }
+    </script>
+
+{% endblock %}
